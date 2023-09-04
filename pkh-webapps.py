@@ -12,7 +12,7 @@ img = img.resize((700, 418))
 st.image(img, use_column_width=False)
 
 knnmodel = pickle.load(
-    open('D:/project/rekomendasi_ekspor/Model/rekom.pkl', 'rb'))
+    open('.Model/rekom.pkl', 'rb'))
 
 
 def run():
