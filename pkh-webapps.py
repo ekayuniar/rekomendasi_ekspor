@@ -6,11 +6,9 @@ from PIL import Image
 from sklearn.naive_bayes import GaussianNB
 
 st.write("""
-# Sistem Klasifikasi Kelayakan Penerima Bantuan Program PKH
-Aplikasi berbasi Web untuk memprediski (mengklasifikasi) penerima bantuan PKH \n
-""")
+# Sistem Rekomendasi Ekspor Untuk UMKM""")
 
-img = Image.open('gov_sas.jpg')
+img = Image.open('ekspor.png')
 img = img.resize((700, 418))
 st.image(img, use_column_width=False)
 
@@ -18,10 +16,33 @@ modelnb = pickle.load(open('./Model/modelNBC_PKHv2.pkl', 'rb'))
 
 
 def run():
-    u = {4: 'LANSIA (46 - >65 TAHUN)', 3: 'ANAK-ANAK (5 - 11 TAHUN)',
-         2: 'REMAJA (12 - 25 TAHUN)', 1: 'DEWASA (26 - 45 TAHUN)'}
+    u = {25: 'Biji kakao',
+         24: 'Minyak kelapa sawit dan fraksinya, dimurnikan maupun tidak (tidak termasuk yang dimodifikasi secara kimia)',
+         23: 'Kain tenunan dari sutera atau dari sisa sutera',
+         22: 'Produk tekstil dan barang untuk keperluan teknis',
+         21: 'Kulit kecokelatan atau kerak dan kulit sapi termasuk. binatang kerbau atau kuda yang tidak berbulu',
+         20: 'Peralatan makan, peralatan dapur, perlengkapan rumah tangga lainnya, dan perlengkapan toilet dari porselen atau keramik',
+         19: 'Peralatan makan, peralatan dapur, perlengkapan rumah tangga lainnya, dan perlengkapan toilet dari plastik',
+         18: 'Makanan olahan diperoleh dengan cara menggembungkan atau memanggang sereal atau produk sereal',
+         17: 'Anyaman dan produk semacam itu dari bahan anyaman dirakit menjadi anyaman strip maupun tidak',
+         16: 'Kertas dan kertas karton lainnya tidak dilapisi dalam gulungan dengan lebar 36 cm atau berbentuk persegi atau persegi panjang',
+         15: 'Barang lainnya dari kayu',
+         14: 'Asesoris pakaian jadi dan bagian dari garmen atau segala jenis asesoris pakaian',
+         13: 'Perhiasan imitasi',
+         12: 'Alas kaki dengan sol luar dari kulit karet plastik atau kulit komposisi dan bagian atasnya',
+         11: 'Bumbu makanan',
+         10: 'Kopi, digongseng atau dihilangkan kafeinnya, sekam dan kulit kopi pengganti kopi',
+         9: 'Barang keramik',
+         8: 'Sediaan kecantikan atau tata rias dan sediaan perawatan kulit termasuk tabir surya',
+         7: 'Pakaian dan aksesoris pakaian dari kulit atau kulit komposisi',
+         6: 'Pupuk nitrogen mineral atau kimia (tidak termasuk yang berbentuk tablet atau bentuk serupa',
+         5: 'Serat optik dan bundel serat optik Kabel serat optik',
+         4: 'Setelan jas pria atau anak laki-laki, jaket, blazer, turunannya',
+         3: 'Barang dari plastik dan produk turunannya',
+         2: 'Gandum dan Meslin, Biji-Bijian yang Mengandung Karbohidrat',
+         1: 'Briket/Bahan Bakar padat serupa yang dibuat dari batu bara'}
     us = list(u.keys())
-    usia = st.selectbox('USIA', us, format_func=lambda x: u[x])
+    usia = st.selectbox('Jenis Barang', us, format_func=lambda x: u[x])
 
     j = {3: '< 2', 2: '<=2', 1: '> 2'}
     jm = list(j.keys())
