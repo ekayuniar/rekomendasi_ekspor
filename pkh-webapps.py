@@ -50,7 +50,7 @@ def run():
              4: 'skala besar mencapai ratusan ribu unit',
              3: 'skala sedang mencapai puluhan ribu unit',
              2: 'skala kecil mencapai ribuan unit',
-             1: 'skala rend ah mencapai ratusan unit'}
+             1: 'skala rendah mencapai ratusan unit'}
     sk = list(skala.keys())
     skala_pengiriman = st.selectbox(
         'Skala Pengiriman Barang', sk, format_func=lambda x: skala[x])
