@@ -11,7 +11,7 @@ img = Image.open('ekspor.png')
 img = img.resize((700, 418))
 st.image(img, use_column_width=False)
 
-knnmodel = pickle.load(open('./Model/rekom.pkl', 'rb'))
+knnmodel = pickle.load(open('./Model/modelrekom.pkl', 'rb'))
 
 
 def run():
