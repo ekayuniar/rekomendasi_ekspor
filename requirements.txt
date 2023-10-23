@@ -3,19 +3,12 @@ image==1.5.33
 importlib-metadata==4.12.0
 importlib-resources==5.4.0
 matplotlib-inline==0.1.3
-<<<<<<< HEAD
 numpy==1.25.0
-=======
-numpy==1.17.3
->>>>>>> a0c1093c748183049672834042f2c421d29ff08f
 pandas ==1.3.5
 pickle-mixin==1.0.2
 pickleshare==0.7.5
 scikit-learn==0.24.2
 scipy==1.8.0
-<<<<<<< HEAD
 sklearn==0.0
-=======
 joblib==0.11
->>>>>>> a0c1093c748183049672834042f2c421d29ff08f
 streamlit==1.10.0
