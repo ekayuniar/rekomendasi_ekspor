@@ -11,7 +11,8 @@ img = Image.open('ekspor.png')
 img = img.resize((700, 418))
 st.image(img, use_column_width=False)
 
-knnmodel = pickle.load(open('./Model/modelrekom.pkl', 'rb'))
+knnmodel = pickle.load(
+    open('./Model/modelNBC_PKHv2.pkl', 'rb'))
 
 
 def run():
@@ -75,10 +76,10 @@ def run():
     fitur = pd.DataFrame(data, index=[0])
     st.write(fitur)
 
-    #prediksi = modelnb.predict(fitur)
-    pred_prob = knnmodel.predict_proba(fitur)
-    keterangan = np.array(
-        ['Sangat Direkomendasikan', 'Tidak Direkomendasikan'])
+    # #prediksi = modelnb.predict(fitur)
+    # pred_prob = knnmodel.predict_proba(fitur)
+    # keterangan = np.array(
+    #     ['Sangat Direkomendasikan', 'Tidak Direkomendasikan'])
 
    # st.subheader('Keterangan Label Kelas')
 
